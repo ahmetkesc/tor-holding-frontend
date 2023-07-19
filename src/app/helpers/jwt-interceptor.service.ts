@@ -58,9 +58,6 @@ export class JwtInterceptorService implements HttpInterceptor {
                 }
               }
               break;
-            case 401:
-              // this.logout(true);
-              break;
             case 404:
               this._c_.notify.info('İstek yolu bulunamadı!');
               break;
@@ -106,6 +103,7 @@ export class JwtInterceptorService implements HttpInterceptor {
         catchError((error) => {
           this.isRefreshing = false;
           this._c_.notify.hide();
+          this._c_.logout();
           return throwError(error);
         })
       );
