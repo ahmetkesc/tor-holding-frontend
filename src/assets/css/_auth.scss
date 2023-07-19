@@ -1,0 +1,304 @@
+.login {
+  p {
+    color: #b3b3b3;
+
+    font-family: "Roboto", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: "Roboto", sans-serif;
+    color: white;
+  }
+
+  a {
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+  }
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .half,
+  .half .container > .row {
+    height: 100vh;
+    .dx-checkbox-text {
+      color: #b3b3b3;
+    }
+    .dx-checkbox-icon {
+      background-color: #009ee3;
+    }
+    .dx-checkbox-checked .dx-checkbox-icon {
+      color: white;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .half .bg {
+      height: 500px;
+    }
+  }
+  .mt-auto {
+    margin-top: auto !important;
+  }
+
+  .auth {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh;
+    align-items: center;
+    justify-items: center;
+    background-color: #3f3b6c;
+  }
+
+  @media only screen and (max-width: 550.98px) {
+    .auth {
+      display: none !important;
+    }
+  }
+  .card-img {
+    width: 40vw;
+  }
+  .half .content,
+  .half .bg {
+    width: 50%;
+    // background-color: #3f3b6c;
+
+    background-color: #3f3b6c;
+    background-image: linear-gradient(
+      225deg,
+      #3f3b6c 0%,
+      #652d90 50%,
+      #2b86c5 100%
+    );
+
+    .dx-button-has-text .dx-button-content {
+      padding: 7px 30px;
+      background-color: #009ee3;
+      border-radius: 20px;
+    }
+    .dx-button-mode-contained.dx-button-default {
+      border-radius: 20px;
+    }
+    .dx-icon {
+      font-size: 16px;
+    }
+    .dx-button-text {
+      font-size: 18px;
+    }
+
+    .icon-group {
+      width: 100%;
+      align-items: center;
+
+      i {
+        font-size: 2rem;
+        color: white;
+        transition: all 0.2s ease-in-out;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .web:hover {
+        color: #009ee3;
+        filter: drop-shadow(0 0 20px rgba(30, 35, 46, 0.1));
+      }
+      .face:hover {
+        color: #166fe5;
+        filter: drop-shadow(0 0 20px rgba(30, 35, 46, 0.1));
+      }
+      .insta:hover {
+        color: #d2398b;
+        filter: drop-shadow(0 0 20px rgba(30, 35, 46, 0.1));
+      }
+    }
+  }
+  @media (max-width: 1199.98px) {
+    .half .content,
+    .half .bg {
+      width: 100%;
+    }
+  }
+  .half .content .form-group,
+  .half .bg .form-group {
+    margin-bottom: 0;
+    padding: 15px 15px;
+    border-bottom: none;
+  }
+  .half .content .form-group.first,
+  .half .bg .form-group.first {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+  .half .content .form-group.last,
+  .half .bg .form-group.last {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+  .half .content .form-group label,
+  .half .bg .form-group label {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 0;
+    color: #b3b3b3;
+  }
+
+  .half .content .form-control,
+  .half .bg .form-control {
+    font-size: 20px;
+    .dx-texteditor-input {
+      color: black;
+    }
+    .dx-texteditor.dx-state-active.dx-editor-filled,
+    .dx-texteditor.dx-state-active.dx-editor-outlined,
+    .dx-texteditor.dx-state-active.dx-editor-underlined,
+    .dx-texteditor.dx-state-focused.dx-editor-filled,
+    .dx-texteditor.dx-state-focused.dx-editor-outlined,
+    .dx-texteditor.dx-state-focused.dx-editor-underlined {
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .dx-texteditor-container {
+      border-bottom: 2px solid #dee2e6;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+  }
+
+  .form-control.dx-state-focused {
+    .dx-texteditor-container {
+      border-color: #009ee3 !important;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+  }
+  .half .content .form-control:active,
+  .half .content .form-control:focus,
+  .half .bg .form-control:active,
+  .half .bg .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .half .bg {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .half a {
+    color: #888;
+    text-decoration: underline;
+  }
+
+  .half .btn {
+    height: 54px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .half .forgot-pass {
+    position: relative;
+    top: 2px;
+    font-size: 14px;
+  }
+
+  .control {
+    display: block;
+    position: relative;
+    padding-left: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .control .caption {
+    position: relative;
+    top: 0.2rem;
+    color: #888;
+  }
+
+  .control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border-radius: 4px;
+  }
+
+  .control--radio .control__indicator {
+    border-radius: 50%;
+  }
+
+  .control:hover input ~ .control__indicator,
+  .control input:focus ~ .control__indicator {
+    background: #ccc;
+  }
+
+  .control input:checked ~ .control__indicator {
+    background: #007bff;
+  }
+
+  .control:hover input:not([disabled]):checked ~ .control__indicator,
+  .control input:checked:focus ~ .control__indicator {
+    background: #1a88ff;
+  }
+
+  .control input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .control__indicator:after {
+    font-family: "icomoon";
+    content: "\e5ca";
+    position: absolute;
+    display: none;
+    font-size: 16px;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+  }
+
+  .control input:checked ~ .control__indicator:after {
+    display: block;
+    color: #fff;
+  }
+
+  .control--checkbox .control__indicator:after {
+    top: 50%;
+    left: 50%;
+    margin-top: -1px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+  }
+
+  .control--checkbox input:disabled:checked ~ .control__indicator {
+    background-color: #7e0cf5;
+    opacity: 0.2;
+  }
+}

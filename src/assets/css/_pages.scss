@@ -1,0 +1,48 @@
+.t-toolbar-prime {
+  .p-toolbar {
+    padding: 5px !important;
+  }
+  .p-toolbar-group-start .p-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .p-button-icon {
+      margin-bottom: 3px;
+      margin-right: 0;
+    }
+  }
+  .p-toolbar-group-end .p-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .p-button-icon {
+      margin-bottom: 3px;
+      margin-right: 0;
+    }
+  }
+}
+
+.t-toolbar-mat {
+  .mat-icon {
+    margin-bottom: 3px;
+    margin-right: 0 !important;
+  }
+}
+.t-toolbar-dx {
+  .dx-button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .dx-icon {
+      margin-bottom: 3px;
+      margin-right: 0;
+    }
+  }
+
+  .dx-dropdownmenu-button {
+    height: 3.5rem !important;
+  }
+}

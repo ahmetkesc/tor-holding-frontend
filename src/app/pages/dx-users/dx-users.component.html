@@ -1,0 +1,170 @@
+<div class="grid grid-cols-12 gap-y-3">
+  <div class="col-span-12">
+    <dx-toolbar
+      [elementAttr]="{ class: 't-toolbar-dx' }"
+      class="h-14 rounded shadow-md"
+    >
+      <dxi-item
+        location="before"
+        locateInMenu="auto"
+        widget="dxButton"
+        [options]="{
+          text: 'Yeni Kayıt',
+          type: 'default',
+          stylingMode: 'text',
+          icon: 'add',
+          onClick: onShowDialog
+        }"
+      ></dxi-item>
+      <dxi-item
+        location="before"
+        locateInMenu="auto"
+        widget="dxButton"
+        [options]="{
+          text: 'Satır Güncelle',
+          type: 'success',
+          stylingMode: 'text',
+          icon: 'revert',
+          onClick: onUpdateStart
+        }"
+      ></dxi-item>
+      <dxi-item
+        location="before"
+        locateInMenu="auto"
+        widget="dxButton"
+        [options]="{
+          text: 'Satır Sil',
+          type: 'danger',
+          stylingMode: 'text',
+          icon: 'trash',
+          onClick: onDelete
+        }"
+      ></dxi-item>
+      <dxi-item
+        location="after"
+        locateInMenu="auto"
+        widget="dxButton"
+        [options]="{
+          text: 'Verileri Çek',
+          type: 'normal',
+          stylingMode: 'text',
+          icon: 'refresh',
+          onClick: onRefresh
+        }"
+      ></dxi-item>
+    </dx-toolbar>
+  </div>
+  <div class="col-span-12">
+    <dx-data-grid
+      #grid
+      [dataSource]="users"
+      keyExpr="id"
+      noDataText="Veri Yok"
+      (onRowInserted)="onRowInserted($event)"
+      (onRowUpdated)="onRowUpdated($event)"
+      height="70vh"
+    >
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-search-panel
+        [visible]="true"
+        placeholder="Verilerde Arayın..."
+        [width]="200"
+      ></dxo-search-panel>
+      <dxo-selection mode="single" showCheckBoxesMode="always"></dxo-selection>
+      <dxi-column
+        dataField="id"
+        caption="id"
+        [visible]="false"
+        [editorOptions]="{ stylingMode: 'filled' }"
+      ></dxi-column>
+      <dxi-column dataField="adi" caption="Adı"> </dxi-column>
+      <dxi-column dataField="soyadi" caption="Soyadı"> </dxi-column>
+      <dxi-column dataField="cep" caption="Cep"></dxi-column>
+      <dxi-column dataField="adres" caption="Adres"></dxi-column>
+      <dxi-column dataField="eposta" caption="E-Posta"> </dxi-column>
+      <dxi-column dataField="sifre" caption="Şifre"> </dxi-column>
+      <dxo-editing mode="popup">
+        <dxo-popup
+          [showTitle]="true"
+          title="Kullanıcı İşlemleri"
+          [width]="500"
+          [height]="600"
+        >
+          <dxi-toolbar-item
+            widget="dxButton"
+            toolbar="bottom"
+            location="after"
+            [options]="{
+              text: 'Kaydet',
+              icon: 'save',
+              stylingMode: 'text',
+              type: 'default',
+              onClick: onSave
+            }"
+          ></dxi-toolbar-item>
+          <dxi-toolbar-item
+            widget="dxButton"
+            toolbar="bottom"
+            location="after"
+            [options]="{
+              text: 'İptal',
+              icon: 'remove',
+              stylingMode: 'text',
+              type: 'danger',
+              onClick: onCancel
+            }"
+          ></dxi-toolbar-item>
+        </dxo-popup>
+        <dxo-form [colCount]="1">
+          <dxi-item dataField="adi" [editorOptions]="{ stylingMode: 'filled' }">
+            <dxi-validation-rule
+              type="required"
+              message="Lütfen ad giriniz."
+            ></dxi-validation-rule>
+          </dxi-item>
+          <dxi-item
+            dataField="soyadi"
+            [editorOptions]="{ stylingMode: 'filled' }"
+          >
+            <dxi-validation-rule
+              type="required"
+              message="Lütfen soyad giriniz."
+            ></dxi-validation-rule>
+          </dxi-item>
+          <dxi-item
+            dataField="cep"
+            [editorOptions]="{
+              stylingMode: 'filled',
+              mask: '(5##) ### ## ##',
+              showMaskMode: 'onFocus'
+            }"
+          ></dxi-item>
+          <dxi-item
+            dataField="adres"
+            editorType="dxTextArea"
+            [editorOptions]="{ stylingMode: 'filled', height: 150 }"
+          ></dxi-item>
+          <dxi-item
+            dataField="eposta"
+            [editorOptions]="{ stylingMode: 'filled' }"
+          >
+            <dxi-validation-rule
+              type="required"
+              message="Lütfen e-posta giriniz."
+            ></dxi-validation-rule>
+          </dxi-item>
+          <dxi-item
+            dataField="sifre"
+            [editorOptions]="{ stylingMode: 'filled', mode: 'password' }"
+          >
+            <dxi-validation-rule
+              type="required"
+              message="Lütfen şifre giriniz."
+            ></dxi-validation-rule>
+          </dxi-item>
+        </dxo-form>
+      </dxo-editing>
+    </dx-data-grid>
+  </div>
+</div>

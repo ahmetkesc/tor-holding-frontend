@@ -1,0 +1,20 @@
+<div
+  class="flex justify-between items-center px-5 border-b-2 relative lg:static h-14"
+>
+  <a class="cursor-pointer block lg:hidden font-bold mr-3" (click)="onToggle()">
+    <i class="fa-solid fa-bars text-2xl"></i
+  ></a>
+  <div class="flex-items-center">
+    <span class="text-sky-700 font-comfortaa font-semibold text-xl">{{
+      title
+    }}</span>
+  </div>
+  <button
+    type="button"
+    class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-700 hover:text-gray-600 hover:bg-gray-100 focus:outline-none"
+    title="Kapat"
+    (click)="onLogout()"
+  >
+    <i class="fa-solid fa-right-from-bracket mr-2"></i> Çıkış
+  </button>
+</div>
